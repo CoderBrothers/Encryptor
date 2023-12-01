@@ -5,8 +5,45 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Encryptor"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
+        Title="MainWindow" Height="450" Width="400" WindowStyle="None" MouseDown="Window_MouseDown" AllowsTransparency="True">
+    <Grid Margin="5,0,5,5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="Encryptor" HorizontalAlignment="Left"/>
+        <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top">
+            <Button x:Name="Minimize" Content="-" Height="25" Width="25" Click="Minimize_Click"/>
+            <Button x:Name="Close" Content="X" Height="25" Width="25" Click="Close_Click"/>
+        </StackPanel>
+        <Grid Grid.Row="1" Grid.ColumnSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="Input" HorizontalAlignment="Center"/>
+            <TextBox Grid.Row="1"/>
+        </Grid>
+        <Grid Grid.Row="2" Grid.ColumnSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="Output" HorizontalAlignment="Center"/>
+            <TextBox Grid.Row="1"/>
+        </Grid>
+        <UniformGrid Grid.Row="3" Grid.ColumnSpan="2" Rows="1">
+            <Button Content="Encrypt"/>
+            <Button Content="Decrypt"/>
+            <Button Content="Load"/>
+            <Button Content="Save"/>
+            <TextBox/>
+        </UniformGrid>
     </Grid>
 </Window>

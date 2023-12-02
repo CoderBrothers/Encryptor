@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Encryptor"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="400" WindowStyle="None" MouseDown="Window_MouseDown" AllowsTransparency="True">
-    <Grid Margin="5,0,5,5">
+        Title="Encryptor" Height="450" Width="400" WindowStyle="None" MouseDown="Window_MouseDown" AllowsTransparency="True">
+    <Grid Margin="5,0,5,5" Background="#2B2B2B">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="0.5*"/>
@@ -14,36 +14,38 @@
             <RowDefinition Height="0.1*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
-        <TextBlock Text="Encryptor" HorizontalAlignment="Left"/>
-        <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top">
-            <Button x:Name="Minimize" Content="-" Height="25" Width="25" Click="Minimize_Click"/>
-            <Button x:Name="Close" Content="X" Height="25" Width="25" Click="Close_Click"/>
-        </StackPanel>
-        <Grid Grid.Row="1" Grid.ColumnSpan="2">
+        <Grid Grid.Row="0" Background="#1E1E1E">
+            <TextBlock Text="Encryptor" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0" Foreground="White"/>
+            <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,5,10,0">
+                <Button x:Name="Minimize" Content="-" Height="25" Width="25" Click="Minimize_Click" Background="Transparent" Foreground="White"/>
+                <Button x:Name="Close" Content="X" Height="25" Width="25" Click="Close_Click" Background="Transparent" Foreground="White"/>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="1" Grid.ColumnSpan="2" Margin="0,10,0,0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <TextBlock Text="Input" HorizontalAlignment="Center"/>
-            <TextBox Grid.Row="1"/>
+            <TextBlock Text="Input" HorizontalAlignment="Center" Foreground="White"/>
+            <TextBox Grid.Row="1" BorderBrush="#1E1E1E" Background="#2B2B2B" Foreground="White" Margin="5"/>
         </Grid>
-        <Grid Grid.Row="2" Grid.ColumnSpan="2">
+        <Grid Grid.Row="2" Grid.ColumnSpan="2" Margin="0,10,0,0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <TextBlock Text="Output" HorizontalAlignment="Center"/>
-            <TextBox Grid.Row="1"/>
+            <TextBlock Text="Output" HorizontalAlignment="Center" Foreground="White"/>
+            <TextBox Grid.Row="1" BorderBrush="#1E1E1E" Background="#2B2B2B" Foreground="White" Margin="5"/>
         </Grid>
-        <UniformGrid Grid.Row="3" Grid.ColumnSpan="2" Rows="1">
-            <Button Content="Encrypt"/>
-            <Button Content="Decrypt"/>
-            <Button Content="Load"/>
-            <Button Content="Save"/>
-            <TextBox/>
+        <UniformGrid Grid.Row="3" Grid.ColumnSpan="2" Rows="1" Margin="0,10,0,0">
+            <Button Content="Encrypt" Background="#007ACC" Foreground="White" Margin="5" Padding="0,0,5,0"/>
+            <Button Content="Decrypt" Background="#007ACC" Foreground="White" Margin="5" Padding="0,0,5,0"/>
+            <Button Content="Load" Background="#007ACC" Foreground="White" Margin="5" Padding="0,0,5,0"/>
+            <Button Content="Save" Background="#007ACC" Foreground="White" Margin="5" Padding="0,0,5,0"/>
+            <TextBox BorderBrush="#1E1E1E" Background="#2B2B2B" Foreground="White" Margin="5"/>
         </UniformGrid>
     </Grid>
 </Window>

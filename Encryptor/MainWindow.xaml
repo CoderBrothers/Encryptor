@@ -30,7 +30,7 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <TextBlock Text="Input" HorizontalAlignment="Center" Foreground="White"/>
-            <TextBox Grid.Row="1" BorderBrush="#1E1E1E" Background="#2B2B2B" Foreground="White" Margin="5"/>
+            <TextBox x:Name="InputTextBox" Grid.Row="1" BorderBrush="#1E1E1E" Background="#2B2B2B" Foreground="White" Margin="5" TextWrapping="Wrap"/>
         </Grid>
         <Grid Grid.Row="2" Grid.ColumnSpan="2" Margin="0,10,0,0">
             <Grid.RowDefinitions>
@@ -38,14 +38,14 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <TextBlock Text="Output" HorizontalAlignment="Center" Foreground="White"/>
-            <TextBox Grid.Row="1" BorderBrush="#1E1E1E" Background="#2B2B2B" Foreground="White" Margin="5"/>
+            <TextBox x:Name="OutputTextBox" Grid.Row="1" BorderBrush="#1E1E1E" Background="#2B2B2B" Foreground="White" Margin="5"/>
         </Grid>
         <UniformGrid Grid.Row="3" Grid.ColumnSpan="2" Rows="1" Margin="0,10,0,0">
-            <Button Content="Encrypt" Background="#007ACC" Foreground="White" Margin="5" Padding="0,0,5,0"/>
-            <Button Content="Decrypt" Background="#007ACC" Foreground="White" Margin="5" Padding="0,0,5,0"/>
-            <Button Content="Load" Background="#007ACC" Foreground="White" Margin="5" Padding="0,0,5,0"/>
-            <Button Content="Save" Background="#007ACC" Foreground="White" Margin="5" Padding="0,0,5,0"/>
-            <TextBox BorderBrush="#1E1E1E" Background="#2B2B2B" Foreground="White" Margin="5"/>
+            <Button x:Name="EncryptBtn" Content="Encrypt" Background="#007ACC" Foreground="White" Margin="5" Padding="0,0,5,0" Click="Encrypt"/>
+            <Button x:Name="DecryptBtn" Content="Decrypt" Background="#007ACC" Foreground="White" Margin="5" Padding="0,0,5,0" Click="Encrypt"/>
+            <Button x:Name="LoadBtn" Content="Load" Background="#007ACC" Foreground="White" Margin="5" Padding="0,0,5,0" Click="LoadBtn_OnClick"/>
+            <Button x:Name="SaveBtn" Content="Save" Background="#007ACC" Foreground="White" Margin="5" Padding="0,0,5,0" Click="SaveBtn_OnClick"/>
+            <TextBox x:Name="KeyBox" BorderBrush="#1E1E1E" Background="#2B2B2B" Foreground="White" Margin="5" PreviewTextInput="KeyBox_OnPreviewTextInput"/>
         </UniformGrid>
     </Grid>
 </Window>

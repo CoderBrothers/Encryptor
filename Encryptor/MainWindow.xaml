@@ -5,8 +5,57 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Encryptor"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
+        Title="MainWindow" Height="400" Width="300" WindowStyle="None" MouseDown="Window_MouseDown" AllowsTransparency="True" Icon="/gnome-help.ico">
+    <Window.Background>
+        <ImageBrush ImageSource="/Matrex.jpg"/>
+    </Window.Background>
+    <Grid Margin="5,0,5,5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+            <Image Source="/gnome-help.png" />
+            <TextBlock Text="Encryptor" Foreground="LightGreen"/>
+        </StackPanel>
+        <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top">
+            <Button x:Name="Minimize" Background="Transparent" BorderThickness="0" Height="20" Width="25" Click="Minimize_Click">
+                <Image Source="/Hide.png" />
+            </Button>
+            <Button x:Name="Close" Background="Transparent" BorderThickness="0" Height="20" Width="25" Click="Close_Click">
+                <Image Source="/Close.png" />
+            </Button>
+        </StackPanel>
+        <Grid Grid.Row="1" Grid.ColumnSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="Input" Foreground="LightGreen" HorizontalAlignment="Center"/>
+            <TextBox Background="Transparent" Foreground="LightGreen" BorderThickness="0" Grid.Row="1"/>
+        </Grid>
+        <Grid Grid.Row="2" Grid.ColumnSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="Output" Foreground="LightGreen" HorizontalAlignment="Center"/>
+            <TextBox Background="Transparent" Foreground="LightGreen" BorderThickness="0" Grid.Row="1"/>
+        </Grid>
+        <UniformGrid Grid.Row="3" Grid.ColumnSpan="2" Rows="1">
+            <Button Background="Transparent" BorderThickness="0">
+                <Image Source="/encrypted.png" />
+            </Button>
+            <Button Content="Decrypt"/>
+            <Button x:Name="LoadBtn" Content="Load"/>
+            <Button x:Name="SaveBtn" Content="Save" Click="SaveBtn_Click"/>
+            <TextBox/>
+        </UniformGrid>
     </Grid>
 </Window>

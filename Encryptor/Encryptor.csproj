@@ -8,4 +8,22 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Close.png" />
+    <None Remove="encrypted.png" />
+    <None Remove="gnome-help.ico" />
+    <None Remove="gnome-help.png" />
+    <None Remove="Hide.png" />
+    <None Remove="Matrex.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Close.png" />
+    <Resource Include="encrypted.png" />
+    <Resource Include="gnome-help.ico" />
+    <Resource Include="gnome-help.png" />
+    <Resource Include="Hide.png" />
+    <Resource Include="Matrex.jpg" />
+  </ItemGroup>
+
 </Project>

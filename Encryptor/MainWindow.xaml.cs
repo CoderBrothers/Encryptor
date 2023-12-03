@@ -13,14 +13,28 @@ using Microsoft.Win32;
 
 namespace Encryptor
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// <summaryкодегора>
+    /// Interaction logic for MainWindow.xaml/
     /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
+            KeyBox.TextChanged += KeyBox_TextChanged;
+        }
+
+        private void MainWindow_OnClosed(object? sender, EventArgs e)
+        {
+            AppSettings.Default.WindowTop = Top;
+            AppSettings.Default.WindowLeft = Left;
+            AppSettings.Default.Save();
+        }
+
+        private void MainWindow_OnLoaded(object sender, RoutedEventArgs e)
+        {
+            Top = AppSettings.Default.WindowTop;
+            Left = AppSettings.Default.WindowLeft;
         }
 
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
@@ -80,6 +94,17 @@ namespace Encryptor
             };
             if (sfd.ShowDialog() == false) return;
             await File.WriteAllTextAsync(sfd.FileName, OutputTextBox.Text);
+        }
+
+        private void KeyBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            const int maxKeyLength = 9; 
+
+            if (KeyBox.Text.Length > maxKeyLength)
+            {
+                KeyBox.Text = KeyBox.Text.Substring(0, maxKeyLength);
+                KeyBox.CaretIndex = maxKeyLength;
+            }
         }
     }
 }

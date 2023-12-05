@@ -21,6 +21,17 @@
         <Grid Grid.Row="0" Background="#1E1E1E">
             <TextBlock Text="Encryptor" Style="{StaticResource EncryptorTextBlock.Style}"/>
             <StackPanel Style="{StaticResource StackPanel.Style}">
+                <Button x:Name="HelpBtn" Content="?" Style="{StaticResource MinimizeAndCloseButton.Style}">
+                    <Button.Triggers>
+                        <EventTrigger RoutedEvent="Button.Click">
+                            <BeginStoryboard>
+                                <Storyboard TargetProperty="Height" TargetName="HelpPanel">
+                                    <DoubleAnimation From="0" To="450" Duration="0:0:0.5" AutoReverse="False"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </Button.Triggers>
+                </Button>
                 <Button x:Name="Minimize" Content="-" Style="{StaticResource MinimizeAndCloseButton.Style}" Click="Minimize_Click"/>
                 <Button x:Name="Close" Content="X" Style="{StaticResource MinimizeAndCloseButton.Style}" Click="Close_Click"/>
             </StackPanel>
@@ -48,5 +59,19 @@
             <Button x:Name="SaveBtn" Content="Save" Style="{StaticResource ControlButtons.Style}" Click="SaveBtn_OnClick"/>
             <TextBox x:Name="KeyBox" Style="{StaticResource TextBlocks.Style}" TextWrapping="NoWrap" PreviewTextInput="KeyBox_OnPreviewTextInput" MaxLength="9"/>
         </UniformGrid>
+
+        <WrapPanel x:Name="HelpPanel" Background="Aqua" Grid.RowSpan="4" Grid.ColumnSpan="2" Height="0" Width="400" Orientation="Vertical">
+            <Button Width="25" Height="25" Content="x">
+                <Button.Triggers>
+                    <EventTrigger RoutedEvent="Button.Click">
+                        <BeginStoryboard>
+                            <Storyboard TargetProperty="Height" TargetName="HelpPanel">
+                                <DoubleAnimation From="450" To="0" Duration="0:0:0.5" AutoReverse="False"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Button.Triggers>
+            </Button>
+        </WrapPanel>
     </Grid>
 </Window>

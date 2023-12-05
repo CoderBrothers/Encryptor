@@ -21,7 +21,6 @@ namespace Encryptor
         public MainWindow()
         {
             InitializeComponent();
-            KeyBox.TextChanged += KeyBox_TextChanged;
         }
 
         private void MainWindow_OnClosed(object? sender, EventArgs e)
@@ -94,17 +93,6 @@ namespace Encryptor
             };
             if (sfd.ShowDialog() == false) return;
             await File.WriteAllTextAsync(sfd.FileName, OutputTextBox.Text);
-        }
-
-        private void KeyBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            const int maxKeyLength = 9; 
-
-            if (KeyBox.Text.Length > maxKeyLength)
-            {
-                KeyBox.Text = KeyBox.Text.Substring(0, maxKeyLength);
-                KeyBox.CaretIndex = maxKeyLength;
-            }
         }
     }
 }

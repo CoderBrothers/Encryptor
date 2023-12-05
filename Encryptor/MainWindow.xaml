@@ -46,7 +46,7 @@
             <Button x:Name="DecryptBtn" Content="Decrypt" Style="{StaticResource ControlButtons.Style}" Click="Encrypt"/>
             <Button x:Name="LoadBtn" Content="Load" Style="{StaticResource ControlButtons.Style}" Click="LoadBtn_OnClick"/>
             <Button x:Name="SaveBtn" Content="Save" Style="{StaticResource ControlButtons.Style}" Click="SaveBtn_OnClick"/>
-            <TextBox x:Name="KeyBox" Style="{StaticResource TextBlocks.Style}" TextWrapping="NoWrap" PreviewTextInput="KeyBox_OnPreviewTextInput" TextChanged="KeyBox_TextChanged"/>
+            <TextBox x:Name="KeyBox" Style="{StaticResource TextBlocks.Style}" TextWrapping="NoWrap" PreviewTextInput="KeyBox_OnPreviewTextInput" MaxLength="9"/>
         </UniformGrid>
     </Grid>
 </Window>

@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:Encryptor"
         mc:Ignorable="d"
         Title="Encryptor" Height="450" Width="400" WindowStyle="None" MouseDown="Window_MouseDown" 
-        AllowsTransparency="True" Closed="MainWindow_OnClosed" Loaded="MainWindow_OnLoaded">
+        AllowsTransparency="True" Closed="MainWindow_OnClosed" Loaded="MainWindow_OnLoaded" 
+        Icon="1.png">
     <Grid Margin="5,0,5,5" Background="#2B2B2B">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -60,7 +61,7 @@
             <TextBox x:Name="KeyBox" Style="{StaticResource TextBlocks.Style}" TextWrapping="NoWrap" PreviewTextInput="KeyBox_OnPreviewTextInput" MaxLength="9"/>
         </UniformGrid>
 
-        <WrapPanel x:Name="HelpPanel" Background="Aqua" Grid.RowSpan="4" Grid.ColumnSpan="2" Height="0" Width="400" Orientation="Vertical">
+        <WrapPanel x:Name="HelpPanel" Background="#404040" Grid.RowSpan="4" Grid.ColumnSpan="2" Height="0" Width="400" Orientation="Vertical">
             <Button Width="25" Height="25" Content="x">
                 <Button.Triggers>
                     <EventTrigger RoutedEvent="Button.Click">
@@ -72,6 +73,21 @@
                     </EventTrigger>
                 </Button.Triggers>
             </Button>
+            <TextBlock TextWrapping="Wrap" Margin="10" Foreground="White">
+                Добро пожаловать в Encryptor!<LineBreak/>
+                <LineBreak/>
+                Этот инструмент позволяет вам шифровать и дешифровать текст с использованием ключа.<LineBreak/>
+                <LineBreak/>
+                Для начала выберите режим (Encrypt или Decrypt), введите текст в поле 'Input' и укажите ключ.<LineBreak/>
+                <LineBreak/>
+                После этого нажмите соответствующую кнопку (Encrypt/Decrypt) для обработки текста.<LineBreak/>
+                <LineBreak/>
+                Также вы можете загружать и сохранять текст из/в файл с помощью кнопок 'Load' и 'Save'.<LineBreak/>
+                <LineBreak/>
+                Приятного использования!
+            </TextBlock>
+            <Image Source="hd.png" Width="160" Height="160"/>
         </WrapPanel>
+
     </Grid>
 </Window>
